@@ -1,0 +1,189 @@
+/* ==========================
+   GALLERY SECTION 
+========================== */
+.gallery {
+  position: relative;
+  padding: 120px 8%;
+  background: linear-gradient(
+    180deg,
+    #f8fafc 0%,
+    #ffffff 100%
+  );
+  overflow: hidden;
+}
+.gallery::before {
+  content: "";
+  position: absolute;
+  top: -200px;
+  right: -200px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(
+    circle,
+    rgba(249,115,22,0.08),
+    transparent 70%
+  );
+  pointer-events: none;
+}
+/* ==========================
+   HEADER    
+========================== */
+.gallery-header {
+  text-align: center;
+  max-width: 850px;
+  margin: 0 auto 80px;
+}
+.gallery-tag {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 50px;
+  background: rgba(249,115,22,0.08);
+  border: 1px solid rgba(249,115,22,0.15);
+  color: #f97316;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 24px;
+}
+.gallery-header h2 {
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 20px;
+}
+.gallery-header p {
+  color: #64748b;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+/* ==========================
+   GRID
+========================== */
+.gallery-grid {
+  max-width: 1450px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+/* ==========================
+   CARD
+========================== */
+.gallery-card {
+  position: relative;
+  height: 380px;
+  overflow: hidden;
+  border-radius: 28px;
+  background: #fff;
+  border: 1px solid rgba(15,23,42,0.05);
+  box-shadow:
+    0 15px 40px rgba(15,23,42,0.08);
+  cursor: pointer;
+  transition: all 0.45s ease;
+}
+.gallery-card:hover {
+  transform: translateY(-10px);
+  box-shadow:
+    0 30px 60px rgba(15,23,42,0.15);
+}
+/* ==========================
+   IMAGE
+========================== */
+.gallery-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition:
+    transform 0.8s ease,
+    filter 0.5s ease;
+}
+.gallery-card:hover img {
+  transform: scale(1.12);
+  filter: brightness(0.9);
+}
+/* ==========================
+   OVERLAY
+========================== */
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  padding: 30px;
+  background: linear-gradient(
+    to top,
+    rgba(15,23,42,0.98),
+    rgba(15,23,42,0.5),
+    transparent
+  );
+  opacity: 0;
+  transition: all 0.45s ease;
+}
+.gallery-card:hover .gallery-overlay {
+  opacity: 1;
+}
+/* ==========================
+   CONTENT
+========================== */
+.gallery-overlay-content {
+  transform: translateY(25px);
+  transition: all 0.45s ease;
+}
+.gallery-card:hover .gallery-overlay-content {
+  transform: translateY(0);
+}
+.gallery-overlay h3 {
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.gallery-overlay p {
+  color: rgba(255,255,255,0.75);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+/* ==========================
+   PREMIUM BADGE
+========================== */
+.gallery-card::after {
+  content: "Premium";
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 8px 14px;
+  border-radius: 50px;
+  background: rgba(255,255,255,0.15);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 600;
+  opacity: 0;
+  transition: 0.4s ease;
+}
+.gallery-card:hover::after {
+  opacity: 1;
+}
+/* ==========================
+   RESPONSIVE
+========================== */
+@media (max-width: 1100px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .gallery {
+    padding: 90px 6%;
+  }
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+  .gallery-card {
+    height: 300px;
+  }
+  .gallery-header h2 {
+    font-size: 2.2rem;
+  }
+}
