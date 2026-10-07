@@ -58,6 +58,31 @@ function Footer() {
       <div className="footer-contact-row">
 
         <div className="contact-card">
+          <div className="contact-number">03</div>
+
+          <div className="contact-info">
+            <a href="mailto:info@makprints.com">
+              <MdEmail className="contact-icon" />
+              info@makprints.com
+            </a>
+
+            <a href="tel:+919910506665">
+              <FaPhoneAlt className="contact-icon" />
+              +91 99105 06665
+            </a>
+
+            <a
+              href="https://wa.me/919910506665"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaWhatsapp className="contact-icon" />
+              WhatsApp Us
+            </a>
+          </div>
+        </div>
+      
+      <div className="contact-card">
           <div className="contact-number">01</div>
 
           <div className="contact-info">
@@ -107,31 +132,7 @@ function Footer() {
           </div>
         </div>
 
-        <div className="contact-card">
-          <div className="contact-number">03</div>
-
-          <div className="contact-info">
-            <a href="mailto:info@makprints.com">
-              <MdEmail className="contact-icon" />
-              info@makprints.com
-            </a>
-
-            <a href="tel:+919910506665">
-              <FaPhoneAlt className="contact-icon" />
-              +91 99105 06665
-            </a>
-
-            <a
-              href="https://wa.me/919910506665"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaWhatsapp className="contact-icon" />
-              WhatsApp Us
-            </a>
-          </div>
-        </div>
-
+        
       </div>
 
       {/* Footer Bottom */}
